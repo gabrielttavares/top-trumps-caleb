@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Characters extends Abilities{
-    private List<Abilities>characters;
+public class Characters{
+    private List<Abilities> characters;
 
-    public Characters(String name, int strength, int wisdom, double faithLevel, float humility, String specialAbility, String tribe, boolean isLeader) {
-        super(name, strength, wisdom, faithLevel, humility, specialAbility, tribe, isLeader);
-        characters = new ArrayList<>();
+    public Characters() {
+        this.characters = new ArrayList<>();
     }
 
     public void addCharacter(Abilities abilities){
