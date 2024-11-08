@@ -1,17 +1,17 @@
 public class Abilities {
+    private String name;
     private int strength;
     private int wisdom;
-    private int miraclesPerformed;
     private double faithLevel;
     private float humility;
     private String specialAbility;
     private String tribe;
     private boolean isLeader;
 
-    public Abilities(int strength, int wisdom, int miraclesPerformed, double faithLevel, float humility, String specialAbility, String tribe, boolean isLeader) {
+    public Abilities(String name, int strength, int wisdom, double faithLevel, float humility, String specialAbility, String tribe, boolean isLeader) {
+        this.name = name;
         this.strength = strength;
         this.wisdom = wisdom;
-        this.miraclesPerformed = miraclesPerformed;
         this.faithLevel = faithLevel;
         this.humility = humility;
         this.specialAbility = specialAbility;
@@ -19,11 +19,22 @@ public class Abilities {
         this.isLeader = isLeader;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getStrength() {
         return strength;
     }
 
     public void setStrength(int strength) {
+        if (strength < 0) {
+            throw new IllegalArgumentException("Strength cannot be negative");
+        }
         this.strength = strength;
     }
 
@@ -33,14 +44,6 @@ public class Abilities {
 
     public void setWisdom(int wisdom) {
         this.wisdom = wisdom;
-    }
-
-    public int getMiraclesPerformed() {
-        return miraclesPerformed;
-    }
-
-    public void setMiraclesPerformed(int miraclesPerformed) {
-        this.miraclesPerformed = miraclesPerformed;
     }
 
     public double getFaithLevel() {
@@ -72,6 +75,9 @@ public class Abilities {
     }
 
     public void setTribe(String tribe) {
+        if (tribe == null) {
+            throw new IllegalArgumentException("Tribe cannot be empty");
+        }
         this.tribe = tribe;
     }
 
@@ -86,9 +92,9 @@ public class Abilities {
     @Override
     public String toString() {
         return "Abilities{" +
+                "name=" + name +
                 "strength=" + strength +
                 ", wisdom=" + wisdom +
-                ", miraclesPerformed=" + miraclesPerformed +
                 ", faithLevel=" + faithLevel +
                 ", humility=" + humility +
                 ", specialAbility='" + specialAbility +
