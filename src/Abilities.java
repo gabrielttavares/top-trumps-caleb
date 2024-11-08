@@ -10,12 +10,12 @@ public class Abilities {
 
     public Abilities(String name, int strength, int wisdom, double faithLevel, float humility, String specialAbility, String tribe, boolean isLeader) {
         this.name = name;
-        this.strength = strength;
-        this.wisdom = wisdom;
-        this.faithLevel = faithLevel;
-        this.humility = humility;
+        setStrength(strength);
+        setWisdom(wisdom);
+        setFaithLevel(faithLevel);
+        setHumility(humility);
         this.specialAbility = specialAbility;
-        this.tribe = tribe;
+        setTribe(tribe);
         this.isLeader = isLeader;
     }
 
@@ -43,6 +43,9 @@ public class Abilities {
     }
 
     public void setWisdom(int wisdom) {
+        if (wisdom < 0 || wisdom > 100) {
+            throw new IllegalArgumentException("Wisdom must be between 0 and 100");
+        }
         this.wisdom = wisdom;
     }
 
@@ -51,6 +54,9 @@ public class Abilities {
     }
 
     public void setFaithLevel(double faithLevel) {
+        if (faithLevel < 0 || faithLevel > 100) {
+            throw new IllegalArgumentException("Faith Level must be between 0 and 100");
+        }
         this.faithLevel = faithLevel;
     }
 
@@ -59,6 +65,9 @@ public class Abilities {
     }
 
     public void setHumility(float humility) {
+        if (humility < 0 || humility > 10) {
+            throw new IllegalArgumentException("Humility must be between 0 and 10");
+        }
         this.humility = humility;
     }
 
@@ -75,13 +84,13 @@ public class Abilities {
     }
 
     public void setTribe(String tribe) {
-        if (tribe == null) {
+        if (tribe == null || tribe.isEmpty()) {
             throw new IllegalArgumentException("Tribe cannot be empty");
         }
         this.tribe = tribe;
     }
 
-    public boolean getIsLeader() {
+    public boolean isLeader() {
         return isLeader;
     }
 
@@ -91,14 +100,13 @@ public class Abilities {
 
     @Override
     public String toString() {
-        return "Abilities{" +
-                "name=" + name +
-                "strength=" + strength +
-                ", wisdom=" + wisdom +
-                ", faithLevel=" + faithLevel +
-                ", humility=" + humility +
-                ", specialAbility='" + specialAbility +
-                ", tribe='" + tribe +
-                ", isLeader=" + isLeader + '}';
+        return "Character: " + name + "\n" +
+                "Strength: " + strength + "\n" +
+                "Wisdom: " + wisdom + "\n" +
+                "Faith Level: " + faithLevel + "\n" +
+                "Humility: " + humility + "\n" +
+                "Special Ability: " + specialAbility + "\n" +
+                "Tribe: " + tribe + "\n" +
+                "Leader: " + (isLeader ? "Yes" : "No") + "\n";
     }
 }
