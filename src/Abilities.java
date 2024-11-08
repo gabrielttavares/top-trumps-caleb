@@ -10,12 +10,12 @@ public class Abilities {
 
     public Abilities(String name, int strength, int wisdom, double faithLevel, float humility, String specialAbility, String tribe, boolean isLeader) {
         this.name = name;
-        setStrength(strength);
-        setWisdom(wisdom);
-        setFaithLevel(faithLevel);
-        setHumility(humility);
+        this.strength = strength;
+        this.wisdom = wisdom;
+        this.faithLevel = faithLevel;
+        this.humility = humility;
         this.specialAbility = specialAbility;
-        setTribe(tribe);
+        this.tribe = tribe;
         this.isLeader = isLeader;
     }
 
