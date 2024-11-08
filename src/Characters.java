@@ -5,6 +5,6 @@ public class Characters extends Abilities{
 
     public static void main(String[] args) {
         Abilities mosesAbilities = new Abilities("Moses", 70, 70, 30, 2, "Parting the Sea", "Levi", true);
-        mosesAbilities.toString();
+        System.out.println(mosesAbilities);
     }
 }
