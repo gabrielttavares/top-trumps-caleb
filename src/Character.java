@@ -1,4 +1,4 @@
-public class Abilities {
+public class Character {
     private String name;
     private int strength;
     private int wisdom;
@@ -8,7 +8,7 @@ public class Abilities {
     private String tribe;
     private boolean isLeader;
 
-    public Abilities(String name, int strength, int wisdom, double faithLevel, float humility, String specialAbility, String tribe, boolean isLeader) {
+    public Character(String name, int strength, int wisdom, double faithLevel, float humility, String specialAbility, String tribe, boolean isLeader) {
         this.name = name;
         this.strength = strength;
         this.wisdom = wisdom;
