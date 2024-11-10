@@ -13,6 +13,7 @@ public class Deck {
 		Collections.shuffle(cards);
 	}
 	
+	// Returns a sublist of the first `numberOfCards` and remove them from the deck
 	public List<Character> deal(int numberOfCards) {
 		List<Character> hand = new ArrayList<>(cards.subList(0, numberOfCards));
 		cards.subList(0, numberOfCards).clear();
