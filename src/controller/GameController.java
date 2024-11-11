@@ -15,7 +15,7 @@ public class GameController {
 
 	// Play a round with the selected attribute
     public void playRound(Attribute attribute) {
-        game.playRound(attribute);  // Execute the round in Game
+        game.playRound(attribute);
 
         // Ensure view is not null
         if (view != null) {
