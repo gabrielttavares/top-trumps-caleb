@@ -111,7 +111,7 @@ public class Character {
         this.tribe = tribe;
     }
 
-    public boolean isLeader() {
+    public boolean getIsLeader() {
         return isLeader;
     }
 
