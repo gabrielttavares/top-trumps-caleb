@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
@@ -6,6 +7,8 @@ out/
 
 ### Eclipse ###
 =======
+=======
+>>>>>>> e7882270e1f3e821e1e536514bbdbd86b9897156
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -13,7 +16,10 @@ target/
 !**/src/test/**/target/
 
 ### STS ###
+<<<<<<< HEAD
 >>>>>>> 65ad582 (feat: Integrate Spring Boot with existing project structure and database)
+=======
+>>>>>>> e7882270e1f3e821e1e536514bbdbd86b9897156
 .apt_generated
 .classpath
 .factorypath
@@ -22,17 +28,23 @@ target/
 .springBeans
 .sts4-cache
 <<<<<<< HEAD
+<<<<<<< HEAD
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 =======
+=======
+>>>>>>> e7882270e1f3e821e1e536514bbdbd86b9897156
 
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+<<<<<<< HEAD
 >>>>>>> 65ad582 (feat: Integrate Spring Boot with existing project structure and database)
+=======
+>>>>>>> e7882270e1f3e821e1e536514bbdbd86b9897156
 
 ### NetBeans ###
 /nbproject/private/
@@ -41,6 +53,7 @@ bin/
 /nbdist/
 /.nb-gradle/
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ### VS Code ###
 .vscode/
@@ -48,10 +61,15 @@ bin/
 ### Mac OS ###
 .DS_Store
 =======
+=======
+>>>>>>> e7882270e1f3e821e1e536514bbdbd86b9897156
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
 >>>>>>> 65ad582 (feat: Integrate Spring Boot with existing project structure and database)
+=======
+>>>>>>> e7882270e1f3e821e1e536514bbdbd86b9897156

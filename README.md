@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # top-trumps-caleb
 
 A [Top Trumps](https://en.wikipedia.org/wiki/Top_Trumps) game based on the Bible, made for my kids.
+=======
+#top-trumps-caleb
+
+A [Top Trumps](https://en.wikipedia.org/wiki/Top_Trumps) game based on characters from the Bible, made for my kids.
+>>>>>>> e7882270e1f3e821e1e536514bbdbd86b9897156
 
     Start[Start Game] --> ChoosePlayers[Choose Number of Players]
     ChoosePlayers --> DealCards[Deal Cards to Players]
