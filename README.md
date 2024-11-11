@@ -1,6 +1,6 @@
 # top-trumps-caleb
 
-A [Top Trumps] (https://en.wikipedia.org/wiki/Top_Trumps) game based on the Bible, made for my kids.
+A [Top Trumps](https://en.wikipedia.org/wiki/Top_Trumps) game based on the Bible, made for my kids.
 
     Start[Start Game] --> ChoosePlayers[Choose Number of Players]
     ChoosePlayers --> DealCards[Deal Cards to Players]
