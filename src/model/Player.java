@@ -37,4 +37,8 @@ public class Player {
 	public String getName() {
 		return name;
 	}
+
+	public int getCardCount() {
+		return hand.size();
+	}
 }
