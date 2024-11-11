@@ -4,11 +4,14 @@ import java.security.PublicKey;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import controller.GameController;
 import model.Player;
 
 public class GameWindow extends JFrame {
+	private static final long serialVersionUID = 1L;
+	
 	private GameController controller;
 	
 	private CardDisplay player1CardDisplay;
@@ -29,7 +32,7 @@ public class GameWindow extends JFrame {
 		add(player1CardDisplay, BorderLayout.WEST);
 		add(player2CardDisplay, BorderLayout.EAST);
 		
-		roundResultLabel = new JLabel("Round results will appear here.");
+		roundResultLabel = new JLabel("Select an attribute to start the round.");
 		add(roundResultLabel, BorderLayout.SOUTH);
 	}
 	
@@ -45,5 +48,10 @@ public class GameWindow extends JFrame {
         player1CardDisplay.repaint();
         player2CardDisplay.revalidate();
         player2CardDisplay.repaint();
+	}
+
+	public void displayGameOver(String winner) {
+		JOptionPane.showMessageDialog(this, winner + " wins the game!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+		roundResultLabel.setText("Game Over. " + winner + " is the winner!");
 	}
 }

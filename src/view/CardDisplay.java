@@ -1,10 +1,14 @@
 package view;
+import java.awt.Button;
 import java.awt.GridLayout;
+
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import controller.GameController;
 import model.Character;
+import model.Attribute;
 
 public class CardDisplay extends JPanel {
 	private Character character;
@@ -40,5 +44,11 @@ public class CardDisplay extends JPanel {
 	private void addAttributeLabel(String attributeName, Object value) {
 		JLabel label = new JLabel(attributeName + ": " + value);
 		add(label);
+	}
+	
+	private void addAttributeButton(String attributeName, Attribute attribute) {
+		JButton button = new JButton(attributeName + ": " + character.getAttributeValue(attribute));
+		button.addActionListener(e -> controller.playRound(attribute));
+		add(button);
 	}
 }
