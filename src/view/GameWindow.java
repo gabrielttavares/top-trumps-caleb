@@ -1,15 +1,23 @@
+package view;
 import java.awt.BorderLayout;
 import java.security.PublicKey;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import controller.GameController;
+import model.Player;
+
 public class GameWindow extends JFrame {
+	private GameController controller;
+	
 	private CardDisplay player1CardDisplay;
 	private CardDisplay player2CardDisplay;
 	private JLabel roundResultLabel;
 	
-	public GameWindow(Player player1, Player player2) {
+	public GameWindow(GameController controller, Player player1, Player player2) {
+		this.controller = controller;
+		
 		setTitle("Top Trumps - The Bible");
 		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -1,3 +1,4 @@
+package model;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -41,6 +42,10 @@ public class Characters {
             System.out.println(character);
         }
     }
+
+	public List<Character> getCharacterList() {
+		return characters;
+	}
 }
 
 //    public void findCharacterByName(String name) {
