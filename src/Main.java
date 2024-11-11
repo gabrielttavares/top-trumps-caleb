@@ -31,12 +31,11 @@ public class Main {
             e.printStackTrace();
         }
 
-        // Initialize Players and Deck
         Player player1 = new Player("Player 1");
         Player player2 = new Player("Player 2");
 
         // Pass the characters list to the Deck constructor
-        Deck deck = new Deck(characters.getCharacterList());  // Assuming getCharacterList() returns List<Character>
+        Deck deck = new Deck(characters.getCharacterList());
         
         Game game = new Game(player1, player2, deck);
         GameController controller = new GameController(game);
