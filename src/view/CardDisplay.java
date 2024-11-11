@@ -1,12 +1,18 @@
+package view;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import controller.GameController;
+import model.Character;
+
 public class CardDisplay extends JPanel {
 	private Character character;
+	private GameController controller;
 	
 	public CardDisplay(Character character) {
 		this.character = character;
+		this.controller = controller;
 		setLayout(new GridLayout(0, 1));
 		displayCharacterDetails();
 	}
