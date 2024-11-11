@@ -10,6 +10,10 @@ public class Player {
 		this.hand = new ArrayList<Character>();
 	}
 	
+	public Character getCurrentCard() {
+        return hand.isEmpty() ? null : hand.get(0); // Returns the first card if the hand isn't empty
+    }
+	
 	public void addCards(List<Character> cards) {
 		hand.addAll(cards); // Add to bottom of the hand
 	}
