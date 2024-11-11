@@ -73,4 +73,18 @@ public class Game {
     public Player getPlayer2() {
         return player2;
     }
+
+	public boolean isGameOver() {
+		return player1.getCardCount() == 0 || player2.getCardCount() == 0;
+	}
+
+	public String getWinner() {
+		if (player1.getCardCount() > player2.getCardCount()) {
+			return player1.getName();
+		} else if (player2.getCardCount() > player1.getCardCount()) {
+			return player2.getName();
+		} else {
+			return "It's a draw!";
+		}
+	}
 }

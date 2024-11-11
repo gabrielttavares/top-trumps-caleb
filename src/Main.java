@@ -39,12 +39,15 @@ public class Main {
         
         Game game = new Game(player1, player2, deck);
         game.startGame();
-        GameController controller = new GameController(game);
 
         // Initialize the main game window, passing in game and controller
         SwingUtilities.invokeLater(() -> {
-            GameWindow gameWindow = new GameWindow(controller, player1, player2);
+            GameWindow gameWindow = new GameWindow(null, player1, player2);
+            GameController controller = new GameController(game, gameWindow);
+
+            gameWindow.setController(controller);
             gameWindow.setVisible(true);
         });
+
     }
 }

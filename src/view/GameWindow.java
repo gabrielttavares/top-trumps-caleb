@@ -54,4 +54,8 @@ public class GameWindow extends JFrame {
 		JOptionPane.showMessageDialog(this, winner + " wins the game!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
 		roundResultLabel.setText("Game Over. " + winner + " is the winner!");
 	}
+
+	public void setController(GameController controller) {
+		this.controller = controller;
+	}
 }
