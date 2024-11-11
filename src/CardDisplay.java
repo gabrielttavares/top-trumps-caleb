@@ -8,7 +8,18 @@ public class CardDisplay extends JPanel {
 	public CardDisplay(Character character) {
 		this.character = character;
 		setLayout(new GridLayout(0, 1));
-		
+		displayCharacterDetails();
+	}
+	
+	public void setCharacter(Character character) {
+		this.character = character;
+		removeAll();
+        displayCharacterDetails();
+        revalidate();
+        repaint();
+	}
+	
+	private void displayCharacterDetails() {
 		add(new JLabel("Character: " + character.getName()));
 		add(new JLabel("Special Ability: " + character.getSpecialAbility()));
 		
