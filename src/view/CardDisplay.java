@@ -11,44 +11,57 @@ import model.Character;
 import model.Attribute;
 
 public class CardDisplay extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Character character;
 	private GameController controller;
 	
-	public CardDisplay(Character character) {
+	public CardDisplay(Character character, GameController controller) {
 		this.character = character;
 		this.controller = controller;
 		setLayout(new GridLayout(0, 1));
 		displayCharacterDetails();
 	}
 	
-	public void setCharacter(Character character) {
-		this.character = character;
-		removeAll();
-        displayCharacterDetails();
+	public void setController(GameController controller) {
+        this.controller = controller;
+    }
+	
+	private void displayCharacterDetails() {
+		removeAll();  // Clear previous components
+        
+        if (character != null) {
+            add(new JLabel("Character: " + character.getName()));
+            add(new JLabel("Special Ability: " + character.getSpecialAbility()));
+
+            addAttributeButton("Strength", Attribute.STRENGTH);
+            addAttributeButton("Wisdom", Attribute.WISDOM);
+            addAttributeButton("Faith Level", Attribute.FAITH_LEVEL);
+            addAttributeButton("Humility", Attribute.HUMILITY);
+        } else {
+            add(new JLabel("No character available"));
+        }
+
         revalidate();
         repaint();
 	}
 	
-	private void displayCharacterDetails() {
-		add(new JLabel("Character: " + character.getName()));
-		add(new JLabel("Special Ability: " + character.getSpecialAbility()));
-		
-		addAttributeLabel("Strength", character.getStrength());
-        addAttributeLabel("Wisdom", character.getWisdom());
-        addAttributeLabel("Faith Level", character.getFaithLevel());
-        addAttributeLabel("Humility", character.getHumility());
-        addAttributeLabel("Tribe", character.getTribe());
-        addAttributeLabel("Leader", character.getIsLeader());
-	}
-	
-	private void addAttributeLabel(String attributeName, Object value) {
-		JLabel label = new JLabel(attributeName + ": " + value);
-		add(label);
-	}
-	
 	private void addAttributeButton(String attributeName, Attribute attribute) {
-		JButton button = new JButton(attributeName + ": " + character.getAttributeValue(attribute));
-		button.addActionListener(e -> controller.playRound(attribute));
-		add(button);
+        JButton button = new JButton(attributeName + ": " + character.getAttributeValue(attribute));
+        button.addActionListener(e -> {
+            if (controller != null) {
+                controller.playRound(attribute);  // Guaranteed to have a non-null controller
+            } else {
+                System.err.println("Controller is not set in CardDisplay");
+            }
+        });
+        add(button);
+	}
+	
+	public void setCharacter(Character character) {
+		this.character = character;
+        displayCharacterDetails();
 	}
 }

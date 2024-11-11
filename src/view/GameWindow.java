@@ -13,21 +13,18 @@ public class GameWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private GameController controller;
-	
 	private CardDisplay player1CardDisplay;
 	private CardDisplay player2CardDisplay;
 	private JLabel roundResultLabel;
 	
-	public GameWindow(GameController controller, Player player1, Player player2) {
-		this.controller = controller;
-		
+	public GameWindow(Player player1, Player player2) {		
 		setTitle("Top Trumps - The Bible");
 		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
 		
-		player1CardDisplay = new CardDisplay(player1.getCurrentCard());
-		player2CardDisplay = new CardDisplay(player2.getCurrentCard());
+		player1CardDisplay = new CardDisplay(player1.getCurrentCard(), null);
+		player2CardDisplay = new CardDisplay(player2.getCurrentCard(), null);
 		
 		add(player1CardDisplay, BorderLayout.WEST);
 		add(player2CardDisplay, BorderLayout.EAST);
@@ -35,6 +32,13 @@ public class GameWindow extends JFrame {
 		roundResultLabel = new JLabel("Select an attribute to start the round.");
 		add(roundResultLabel, BorderLayout.SOUTH);
 	}
+	
+	// Method to set the controller after GameWindow creation
+    public void setController(GameController controller) {
+        this.controller = controller;
+        player1CardDisplay.setController(controller);
+        player2CardDisplay.setController(controller);
+    }
 	
 	public void updateRoundResult(String result) {
 		roundResultLabel.setText(result);
@@ -53,9 +57,5 @@ public class GameWindow extends JFrame {
 	public void displayGameOver(String winner) {
 		JOptionPane.showMessageDialog(this, winner + " wins the game!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
 		roundResultLabel.setText("Game Over. " + winner + " is the winner!");
-	}
-
-	public void setController(GameController controller) {
-		this.controller = controller;
 	}
 }
