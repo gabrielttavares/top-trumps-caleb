@@ -38,6 +38,7 @@ public class Main {
         Deck deck = new Deck(characters.getCharacterList());
         
         Game game = new Game(player1, player2, deck);
+        game.startGame();
         GameController controller = new GameController(game);
 
         // Initialize the main game window, passing in game and controller
