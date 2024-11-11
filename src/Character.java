@@ -18,6 +18,27 @@ public class Character {
         this.tribe = tribe;
         this.isLeader = isLeader;
     }
+    
+    public Comparable<?> getAttributeValue(Attribute attribute) {
+    	switch (attribute) {
+	        case STRENGTH:
+	            return strength;
+	        case WISDOM:
+	            return wisdom;
+	        case FAITH_LEVEL:
+	            return faithLevel;
+	        case HUMILITY:
+	            return humility;
+	        case SPECIAL_ABILITY:
+	            return specialAbility;
+	        case TRIBE:
+	            return tribe;
+	        case LEADER:
+	            return isLeader;
+	        default:
+	            throw new IllegalArgumentException("Unknown attribute: " + attribute);
+    	}
+    }
 
     public String getName() {
         return name;
@@ -101,11 +122,11 @@ public class Character {
     @Override
     public String toString() {
         return "Character: " + name + "\n" +
+        		"Special Ability: " + specialAbility + "\n" +
                 "Strength: " + strength + "\n" +
                 "Wisdom: " + wisdom + "\n" +
                 "Faith Level: " + faithLevel + "\n" +
                 "Humility: " + humility + "\n" +
-                "Special Ability: " + specialAbility + "\n" +
                 "Tribe: " + tribe + "\n" +
                 "Leader: " + (isLeader ? "Yes" : "No") + "\n";
     }
