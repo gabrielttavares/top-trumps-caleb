@@ -13,15 +13,20 @@ public class GameController {
         this.view = view;
     }
 
-    // Play a round with the selected attribute
+	// Play a round with the selected attribute
     public void playRound(Attribute attribute) {
-        game.playRound(attribute);
+        game.playRound(attribute);  // Execute the round in Game
 
-        view.updateRoundResult(game.getLastRoundResult());
-        view.refreshCardDisplays(game.getPlayer1(), game.getPlayer2());
-        
-        if (game.isGameOver()) {
-			view.displayGameOver(game.getWinner());
-		}
+        // Ensure view is not null
+        if (view != null) {
+            view.updateRoundResult(game.getLastRoundResult());
+            view.refreshCardDisplays(game.getPlayer1(), game.getPlayer2());
+
+            if (game.isGameOver()) {
+                view.displayGameOver(game.getWinner());
+            }
+        } else {
+            System.err.println("GameWindow (view) is not initialized in GameController.");
+        }
     }
 }
