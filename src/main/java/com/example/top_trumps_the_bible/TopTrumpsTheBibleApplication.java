@@ -28,7 +28,7 @@ public class TopTrumpsTheBibleApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        Game game = gameService.initializeGame();
+        Game game = gameService.startNewGame();
 
         // Check if running in a non-headless environment before launching GUI
         if (!GraphicsEnvironment.isHeadless()) {

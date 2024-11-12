@@ -39,7 +39,7 @@ public class GameServiceTest {
 
         when(characterRepository.findAll()).thenReturn(mockCharacters);
 
-        Game game = gameService.initializeGame();
+        Game game = gameService.startNewGame();
         assertNotNull(game);
         assertNotNull(game.getPlayer1());
         assertNotNull(game.getPlayer2());

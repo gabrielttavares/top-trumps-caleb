@@ -30,8 +30,8 @@ public class Game {
         lastRoundResult = "Game started. Players have their cards.";
     }
 
-    public void playRound(Attribute attribute) {
-        Character card1 = player1.playCard();
+    public void playRound(Attribute attribute) {    	
+    	Character card1 = player1.playCard();
         Character card2 = player2.playCard();
 
         if (card1 == null || card2 == null) {
