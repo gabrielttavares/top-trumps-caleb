@@ -23,7 +23,7 @@ public class GameService {
         this.characterRepository = characterRepository;
     }
 
-    public void startNewGame() {
+    public Game startNewGame() {
         List<Character> characterList = characterRepository.findAll();
         Characters characters = new Characters(characterList);
 
@@ -34,6 +34,7 @@ public class GameService {
         game.startGame();
 
         gameManager = new GameManager(game, null); // null for GameWindow in headless mode
+        return game;
     }
 
     public String playRound(String attributeName) {
