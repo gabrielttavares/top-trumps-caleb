@@ -5,13 +5,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-import com.example.top_trumps_the_bible.controller.GameController;
+import com.example.top_trumps_the_bible.controller.GameManager;
 import com.example.top_trumps_the_bible.model.Player;
 
 public class GameWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	private GameController controller;
+	private GameManager gameManager;
 	private CardDisplay player1CardDisplay;
 	private CardDisplay player2CardDisplay;
 	private JLabel roundResultLabel;
@@ -32,11 +32,11 @@ public class GameWindow extends JFrame {
 		add(roundResultLabel, BorderLayout.SOUTH);
 	}
 	
-	// Method to set the controller after GameWindow creation
-    public void setController(GameController controller) {
-        this.controller = controller;
-        player1CardDisplay.setController(controller);
-        player2CardDisplay.setController(controller);
+	// Method to set the GameManager after GameWindow creation
+    public void setGameManager(GameManager gameManager) {
+        this.gameManager = gameManager;
+        player1CardDisplay.setController(gameManager);
+        player2CardDisplay.setController(gameManager);
     }
 	
 	public void updateRoundResult(String result) {

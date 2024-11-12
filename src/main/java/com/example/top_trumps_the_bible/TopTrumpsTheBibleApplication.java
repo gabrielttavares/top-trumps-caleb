@@ -8,7 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.top_trumps_the_bible.controller.GameController;
+import com.example.top_trumps_the_bible.controller.GameManager;
 import com.example.top_trumps_the_bible.model.Game;
 import com.example.top_trumps_the_bible.service.GameService;
 import com.example.top_trumps_the_bible.view.GameWindow;
@@ -34,8 +34,8 @@ public class TopTrumpsTheBibleApplication implements CommandLineRunner {
         if (!GraphicsEnvironment.isHeadless()) {
             SwingUtilities.invokeLater(() -> {
                 GameWindow gameWindow = new GameWindow(game.getPlayer1(), game.getPlayer2());
-                GameController controller = new GameController(game, gameWindow);
-                gameWindow.setController(controller);
+                GameManager gameManager = new GameManager(game, gameWindow);
+                gameWindow.setGameManager(gameManager);
                 gameWindow.setVisible(true);
             });
         } else {
