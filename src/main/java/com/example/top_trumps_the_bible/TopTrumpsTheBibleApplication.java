@@ -7,6 +7,8 @@ import javax.swing.SwingUtilities;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.top_trumps_the_bible.controller.GameManager;
 import com.example.top_trumps_the_bible.model.Game;
@@ -24,6 +26,11 @@ public class TopTrumpsTheBibleApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(TopTrumpsTheBibleApplication.class, args);
+    }
+    
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 
     @Override

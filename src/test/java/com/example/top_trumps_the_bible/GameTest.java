@@ -25,15 +25,16 @@ class GameTest {
         player2 = new Player("Player 2");
         
         deck = new Deck(List.of(
-            new Character("David", 60, 80, 70, 5, "Leadership", "Judah", true),
-            new Character("Goliath", 90, 30, 20, 2, "Brute Strength", "Philistines", false),
-            new Character("Moses", 50, 70, 80, 4, "Prophecy", "Levi", true),
-            new Character("Samson", 80, 40, 30, 3, "Super Strength", "Dan", false)
+            new Character("Samson", "https://bible.com/samson", 80, 40, 30, 3, "Super Strength", "Dan", false),
+            new Character("David", "https://bible.com/david", 60, 80, 70, 5, "Leadership", "Judah", true),
+            new Character("Goliath", "https://bible.com/goliath", 90, 30, 20, 2, "Brute Strength", "Philistines", false),
+            new Character("Moses", "https://bible.com/moses", 50, 70, 80, 4, "Prophecy", "Levi", true)
         ));
         
         game = new Game(player1, player2, deck);
         game.startGame(); // Ensures cards are dealt to both players
     }
+
 
     @Test
     void testPlayRound() {
