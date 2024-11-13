@@ -13,6 +13,7 @@ public class Character {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	private String referenceLink;
     private int strength;
     private int wisdom;
     private double faithLevel;
@@ -20,13 +21,23 @@ public class Character {
     private String specialAbility;
     private String tribe;
     private boolean isLeader;
+    private String bibleId;
+    private String passageId;
     
     // Default constructor (required by JPA)
     public Character() {
     }
 
-    public Character(String name, int strength, int wisdom, double faithLevel, float humility, String specialAbility, String tribe, boolean isLeader) {
+    public Character(String name, 
+    		String referenceLink, 
+    		int strength, int wisdom, 
+    		double faithLevel, 
+    		float humility, 
+    		String specialAbility, 
+    		String tribe, 
+    		boolean isLeader) {
         this.name = name;
+        this.referenceLink = referenceLink;
         this.strength = strength;
         this.wisdom = wisdom;
         this.faithLevel = faithLevel;
@@ -143,16 +154,41 @@ public class Character {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public String getBibleId() {
+		return bibleId;
+	}
+
+	public void setBibleId(String bibleId) {
+		this.bibleId = bibleId;
+	}
+
+	public String getPassageId() {
+		return passageId;
+	}
+
+	public void setPassageId(String passageId) {
+		this.passageId = passageId;
+	}
 
     @Override
     public String toString() {
         return "Character: " + name + "\n" +
         		"Special Ability: " + specialAbility + "\n" +
+                "Reference Link: " + (referenceLink != null ? referenceLink : "N/A") + "\n" +
                 "Strength: " + strength + "\n" +
                 "Wisdom: " + wisdom + "\n" +
                 "Faith Level: " + faithLevel + "\n" +
                 "Humility: " + humility + "\n" +
                 "Tribe: " + tribe + "\n" +
                 "Leader: " + (isLeader ? "Yes" : "No") + "\n";
+    }
+
+	public String getReferenceLink() {
+		return referenceLink;
+	}
+	
+	public String setReferenceLink(String referenceLink) {
+		return "/bibles/" + bibleId + "/passages/" + passageId;
     }
 }

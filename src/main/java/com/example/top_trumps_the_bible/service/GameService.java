@@ -8,6 +8,9 @@ import com.example.top_trumps_the_bible.model.Game;
 import com.example.top_trumps_the_bible.model.Player;
 import com.example.top_trumps_the_bible.repository.CharacterRepository;
 import com.example.top_trumps_the_bible.controller.GameManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +19,11 @@ import java.util.List;
 public class GameService {
 
     private final CharacterRepository characterRepository;
-    private GameManager gameManager; // To manage game logic
-    private Game game; // Store current game instance
+    private GameManager gameManager;
+    private Game game;
+    @Autowired
+    @Lazy
+    private BibleApiService bibleApiService;
 
     public GameService(CharacterRepository characterRepository) {
         this.characterRepository = characterRepository;
@@ -51,5 +57,12 @@ public class GameService {
 
     public Game getCurrentGameStatus() {
         return game;
+    }
+
+    public String getCharacterPassage(Character character) {
+        String bibleId = "179568874c45066f-01";
+        String passageId = character.getReferenceLink();
+
+        return bibleApiService.getPassage(bibleId, passageId);
     }
 }
