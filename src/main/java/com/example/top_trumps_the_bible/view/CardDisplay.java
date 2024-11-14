@@ -63,7 +63,9 @@ public class CardDisplay extends JPanel {
 
         // Display the passage in a dialog
         javax.swing.SwingUtilities.invokeLater(() -> {
-            javax.swing.JOptionPane.showMessageDialog(this, passage, character.getName() + "'s Story", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    passage,
+                    character.getName() + "'s Story", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         });
     }
 

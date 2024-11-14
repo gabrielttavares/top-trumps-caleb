@@ -9,14 +9,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/top_trumps_the_bible/TopTrumpsTheBibleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/top_trumps_the_bible/TopTrumpsTheBibleApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/top_trumps_the_bible/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/top_trumps_the_bible/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/top_trumps_the_bible/view/CardDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/top_trumps_the_bible/view/CardDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Attribute.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Character.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Characters.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Deck.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/top_trumps_the_bible/GameServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/top_trumps_the_bible/GameTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/top_trumps_the_bible/TopTrumpsTheBibleApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/DatabaseConnection.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/CardDisplay.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameWindow.java" beforeDir="false" />
@@ -61,6 +68,9 @@
   "keyToString": {
     "Application.Characters.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.TopTrumpsTheBible.executor": "Run",
+    "Application.TopTrumpsTheBibleApplication.executor": "Run",
+    "Maven.top-trumps-the-bible.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -68,13 +78,22 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Gabriel/Downloads/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar",
+    "last_opened_file_path": "C:/Users/Gabriel/Downloads/top-trumps-the-bible/top-trumps-the-bible",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="TopTrumpsTheBible" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.top_trumps_the_bible.TopTrumpsTheBibleApplication" />
+      <module name="top-trumps-the-bible" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

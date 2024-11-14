@@ -25,6 +25,7 @@ public class TopTrumpsTheBibleApplication implements CommandLineRunner {
     }
 
     public static void main(String[] args) {
+        System.setProperty("java.awt.headless", "false"); // Local
         SpringApplication.run(TopTrumpsTheBibleApplication.class, args);
     }
     
