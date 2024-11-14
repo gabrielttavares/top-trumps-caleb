@@ -21,6 +21,7 @@ public class GameService {
     private final CharacterRepository characterRepository;
     private GameManager gameManager;
     private Game game;
+    
     @Autowired
     @Lazy
     private BibleApiService bibleApiService;
