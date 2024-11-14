@@ -33,6 +33,13 @@ public class GameService {
         List<Character> characterList = characterRepository.findAll();
         Characters characters = new Characters(characterList);
 
+        for (Character character : characters.getCharacterList()) {
+            if (character.getReferenceLink() == null || character.getReferenceLink().isEmpty()) {
+                String passage = bibleApiService.getPassage(character.getBibleId(), character.getPassageId());
+                character.setReferenceLink(passage);
+            }
+        }
+
         Player player1 = new Player("Player 1");
         Player player2 = new Player("Player 2");
         Deck deck = new Deck(characters.getCharacterList());
