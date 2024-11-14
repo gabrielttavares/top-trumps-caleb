@@ -1,10 +1,6 @@
 package com.example.top_trumps_the_bible.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "characters")  // Rename the table to avoid using the reserved keyword "character"
@@ -13,7 +9,8 @@ public class Character {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private String referenceLink;
+    @Column(length = 2000)
+    private String referenceLink;
     private int strength;
     private int wisdom;
     private double faithLevel;

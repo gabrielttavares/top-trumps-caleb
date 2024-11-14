@@ -37,6 +37,7 @@ public class GameService {
             if (character.getReferenceLink() == null || character.getReferenceLink().isEmpty()) {
                 String passage = bibleApiService.getPassage(character.getBibleId(), character.getPassageId());
                 character.setReferenceLink(passage);
+                characterRepository.save(character);
             }
         }
 
