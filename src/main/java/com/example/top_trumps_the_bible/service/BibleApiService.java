@@ -26,6 +26,7 @@ public class BibleApiService {
     }
 
     public String getPassage(String bibleId, String passageId) {
+        System.out.println("Fetching passage with Bible ID: " + bibleId + " and Passage ID: " + passageId);
         String url = "https://api.scripture.api.bible/v1/bibles/" + bibleId + "/passages/" + passageId;
 
         // Synchronously call the API and return the passage

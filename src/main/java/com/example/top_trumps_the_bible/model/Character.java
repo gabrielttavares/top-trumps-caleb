@@ -16,8 +16,6 @@ public class Character {
     private double faithLevel;
     private float humility;
     private String specialAbility;
-    private String tribe;
-    private boolean isLeader;
     private String bibleId;
     private String passageId;
     
@@ -27,12 +25,11 @@ public class Character {
 
     public Character(String name, 
     		String referenceLink, 
-    		int strength, int wisdom, 
+    		int strength,
+            int wisdom,
     		double faithLevel, 
     		float humility, 
-    		String specialAbility, 
-    		String tribe, 
-    		boolean isLeader) {
+    		String specialAbility) {
         this.name = name;
         this.referenceLink = referenceLink;
         this.strength = strength;
@@ -40,8 +37,6 @@ public class Character {
         this.faithLevel = faithLevel;
         this.humility = humility;
         this.specialAbility = specialAbility;
-        this.tribe = tribe;
-        this.isLeader = isLeader;
     }
     
     public Comparable<?> getAttributeValue(Attribute attribute) {
@@ -56,10 +51,6 @@ public class Character {
 	            return humility;
 	        case SPECIAL_ABILITY:
 	            return specialAbility;
-	        case TRIBE:
-	            return tribe;
-	        case LEADER:
-	            return isLeader;
 	        default:
 	            throw new IllegalArgumentException("Unknown attribute: " + attribute);
     	}
@@ -124,25 +115,6 @@ public class Character {
     public void setSpecialAbility(String specialAbility) {
         this.specialAbility = specialAbility;
     }
-
-    public String getTribe() {
-        return tribe;
-    }
-
-    public void setTribe(String tribe) {
-        if (tribe == null || tribe.isEmpty()) {
-            throw new IllegalArgumentException("Tribe cannot be empty");
-        }
-        this.tribe = tribe;
-    }
-
-    public boolean getIsLeader() {
-        return isLeader;
-    }
-
-    public void setIsLeader(boolean isLeader) {
-        this.isLeader = isLeader;
-    }
     
     public Long getId() {
         return id;
@@ -176,9 +148,7 @@ public class Character {
                 "Strength: " + strength + "\n" +
                 "Wisdom: " + wisdom + "\n" +
                 "Faith Level: " + faithLevel + "\n" +
-                "Humility: " + humility + "\n" +
-                "Tribe: " + tribe + "\n" +
-                "Leader: " + (isLeader ? "Yes" : "No") + "\n";
+                "Humility: " + humility + "\n";
     }
 
 	public String getReferenceLink() {

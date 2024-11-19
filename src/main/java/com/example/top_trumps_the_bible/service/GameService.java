@@ -8,7 +8,6 @@ import com.example.top_trumps_the_bible.model.Game;
 import com.example.top_trumps_the_bible.model.Player;
 import com.example.top_trumps_the_bible.repository.CharacterRepository;
 import com.example.top_trumps_the_bible.controller.GameManager;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -21,7 +20,7 @@ public class GameService {
     private final CharacterRepository characterRepository;
     private GameManager gameManager;
     private Game game;
-    
+
     @Autowired
     @Lazy
     private BibleApiService bibleApiService;
@@ -35,8 +34,9 @@ public class GameService {
         Characters characters = new Characters(characterList);
 
         for (Character character : characters.getCharacterList()) {
+            // Retrieve and set the passage if not already set
             if (character.getReferenceLink() == null || character.getReferenceLink().isEmpty()) {
-                String passage = bibleApiService.getPassage(character.getBibleId(), character.getPassageId());
+                String passage = getCharacterPassage(character);
                 character.setReferenceLink(passage);
                 characterRepository.save(character);
             }
@@ -59,7 +59,7 @@ public class GameService {
         } catch (IllegalArgumentException e) {
             return "Invalid attribute selected.";
         }
-        
+
         gameManager.playRound(attribute);
         return game.getLastRoundResult();
     }
@@ -68,9 +68,10 @@ public class GameService {
         return game;
     }
 
+    // Fetch and return the passage for a specific character using BibleApiService
     public String getCharacterPassage(Character character) {
         String bibleId = "179568874c45066f-01";
-        String passageId = character.getReferenceLink();
+        String passageId = character.getPassageId();
 
         return bibleApiService.getPassage(bibleId, passageId);
     }
