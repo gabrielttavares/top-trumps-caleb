@@ -25,10 +25,10 @@ class GameTest {
         player2 = new Player("Player 2");
         
         deck = new Deck(List.of(
-            new Character("Samson", "https://bible.com/samson", 80, 40, 30, 3, "Super Strength", "Dan", false),
-            new Character("David", "https://bible.com/david", 60, 80, 70, 5, "Leadership", "Judah", true),
-            new Character("Goliath", "https://bible.com/goliath", 90, 30, 20, 2, "Brute Strength", "Philistines", false),
-            new Character("Moses", "https://bible.com/moses", 50, 70, 80, 4, "Prophecy", "Levi", true)
+            new Character("Samson", "https://bible.com/samson", 80, 40, 30, 3, "Super Strength"),
+            new Character("David", "https://bible.com/david", 60, 80, 70, 5, "Leadership"),
+            new Character("Goliath", "https://bible.com/goliath", 90, 30, 20, 2, "Brute Strength"),
+            new Character("Moses", "https://bible.com/moses", 50, 70, 80, 4, "Prophecy")
         ));
         
         game = new Game(player1, player2, deck);

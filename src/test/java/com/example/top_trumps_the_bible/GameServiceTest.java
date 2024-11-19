@@ -33,8 +33,8 @@ public class GameServiceTest {
     @Test
     public void testInitializeGame() {
         List<Character> mockCharacters = Arrays.asList(
-            new Character("David", "https://bible.com/david", 60, 80, 70, 5, "Leadership", "Judah", true),
-            new Character("Goliath", "https://bible.com/goliath", 90, 30, 20, 2, "Brute Strength", "Philistines", false)
+            new Character("David", "https://bible.com/david", 60, 80, 70, 5, "Leadership"),
+            new Character("Goliath", "https://bible.com/goliath", 90, 30, 20, 2, "Brute Strength")
         );
 
         when(characterRepository.findAll()).thenReturn(mockCharacters);
