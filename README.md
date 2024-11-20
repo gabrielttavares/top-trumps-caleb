@@ -1,6 +1,12 @@
 # top-trumps-caleb
 
 A [Top Trumps](https://en.wikipedia.org/wiki/Top_Trumps) game based on characters from the Bible, made for my kids.
+
+⚙️ Tech Stack
+•	Backend: Java with Spring Boot, using RESTful APIs to handle game logic, manage gameplay actions, and interact with the database.
+•	Frontend: React, with modular components for interactive game display.
+•	Database: MySQL, with JPA (Java Persistence API) and Spring Data JPA to manage character data.
+•	Deployment: AWS (for both backend and frontend), Docker, Jenkins for CI/CD integration.
 ```mermaid
 flowchart TD
     Start[Start Game] --> ChoosePlayers[Choose Number of Players]
