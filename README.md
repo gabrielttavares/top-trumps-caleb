@@ -35,7 +35,6 @@
   - Supports both backend APIs and frontend GUI for end-user interaction.
 _______
 
-A [Top Trumps](https://en.wikipedia.org/wiki/Top_Trumps) game based on characters from the Bible, made for my kids.
 ```mermaid
 flowchart TD
     Start[Start Game] --> ChoosePlayers[Choose Number of Players]
