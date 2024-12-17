@@ -1,9 +1,20 @@
-### IntelliJ IDEA ###
+# ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.idea/
+*.iws
+*.iml
+*.ipr
 
-### Eclipse ###
+# ### Eclipse ###
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ### STS ###
 .apt_generated
 .classpath
 .factorypath
@@ -15,15 +26,20 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
-### NetBeans ###
+# ### NetBeans ###
 /nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+ /nbbuild/
+ /dist/
+ /nbdist/
+ /.nb-gradle/
 
-### VS Code ###
+# ### VS Code ###
 .vscode/
 
-### Mac OS ###
+# ### Mac OS ###
 .DS_Store
+
+# ### Additional Build Directories ###
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/.idea/workspace.xml
